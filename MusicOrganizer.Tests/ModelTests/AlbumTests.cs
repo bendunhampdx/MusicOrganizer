@@ -89,5 +89,20 @@ namespace MusicOrganizer.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+    [TestMethod]
+    public void Find_ReturnsCorrectAlbum_Album()
+    {
+      //Arrange
+      string description01 = "Nevermind";
+      string description02 = "In Utero";
+      Album newAlbum1 = new Album(description01);
+      Album newAlbum2 = new Album(description02);
+
+      //Act
+      Album result = Album.Find(2);
+
+      //Assert
+      Assert.AreEqual(newAlbum2, result);
+    }
   }
 }

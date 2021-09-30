@@ -25,5 +25,9 @@ namespace MusicOrganizer
     {
         _instances.Clear();
     }
+      public static Album Find(int searchId)
+    {
+        return _instances[searchId - 1];
+    }
   }
 }
