@@ -76,18 +76,18 @@ namespace MusicOrganizer.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
-    // [TestMethod]
-    // public void GetId_AlbumsInstantiateWithAnIdAndGetterReturns_Int()
-    // {
-    //   //Arrange
-    //   string description = "Nevermind";
-    //   Album newAlbum = new Album(description);
+    [TestMethod]
+    public void GetId_AlbumsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      //Arrange
+      string description = "Nevermind";
+      Album newAlbum = new Album(description);
 
-    //   //Act
-    //   int result = newAlbum.Id;
+      //Act
+      int result = newAlbum.Id;
 
-    //   //Assert
-    //   Assert.AreEqual(1, result);
-    // }
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }
