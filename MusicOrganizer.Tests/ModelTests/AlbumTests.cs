@@ -6,13 +6,12 @@ using System;
 namespace MusicOrganizer.Tests
 {
   [TestClass]
-  public class AlbumTests 
-  // : IDisposable
+  public class AlbumTests : IDisposable
   {
-    //   public void Dispose()
-    // {
-    //   Album.ClearAll();
-    // }
+      public void Dispose()
+    {
+      Album.ClearAll();
+    }
 
     [TestMethod]
     public void AlbumConstructor_CreatesInstanceOfAlbum_Album()
@@ -61,5 +60,34 @@ namespace MusicOrganizer.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+    public void GetAll_ReturnsItems_ItemList()
+    {
+      //Arrange
+      string description01 = "Nevermind";
+      string description02 = "In Utero";
+      Album newAlbum1 = new Album(description01);
+      Album newAlbum2 = new Album(description02);
+      List<Album> newList = new List<Album> { newAlbum1, newAlbum2 };
+
+      //Act
+      List<Album> result = Album.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+    // [TestMethod]
+    // public void GetId_AlbumsInstantiateWithAnIdAndGetterReturns_Int()
+    // {
+    //   //Arrange
+    //   string description = "Nevermind";
+    //   Album newAlbum = new Album(description);
+
+    //   //Act
+    //   int result = newAlbum.Id;
+
+    //   //Assert
+    //   Assert.AreEqual(1, result);
+    // }
   }
 }
